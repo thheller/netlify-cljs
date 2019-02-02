@@ -14,7 +14,10 @@
    :exports {:handler demo.lambda/handler}
    :js-options
    {:js-provider :shadow
-    :keep-native-requires true}}
+    :keep-native-requires true}
+   :devtools
+   {:enabled false}}
+
   :frontend
   {:target :browser
    :modules {:main {:init-fn demo.frontend/init}}
