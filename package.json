@@ -8,6 +8,6 @@
   },
   "dependencies": {},
   "scripts": {
-    "build": "shadow-cljs release lambda frontend"
+    "build": "shadow-cljs release --verbose lambda frontend"
   }
 }
