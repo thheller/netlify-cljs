@@ -1,0 +1,25 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src/dev"
+  "src/main"
+  "src/test"]
+
+ :dependencies
+ []
+
+ :builds
+ {:lambda
+  {:target :node-library
+   :output-to "functions/api.js"
+   :exports {:handler demo.lambda/handler}
+   :js-options
+   {:js-provider :shadow
+    :keep-native-requires true}}
+  :frontend
+  {:target :browser
+   :modules {:main {:init-fn demo.frontend/init}}
+   :devtools
+   {:http-root "public"
+    :http-port 6500
+    :proxy-url "http://localhost:9000" ;; requires running netlify-lambda server functions
+    }}}}
